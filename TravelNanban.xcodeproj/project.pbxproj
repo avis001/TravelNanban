@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		57DB7B3D2D6AB4AF000EAE6A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 57DB7B3C2D6AB4AF000EAE6A /* FirebaseAnalytics */; };
+		57DB7B3F2D6AB4AF000EAE6A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 57DB7B3E2D6AB4AF000EAE6A /* FirebaseAuth */; };
+		57DB7B412D6AB4AF000EAE6A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 57DB7B402D6AB4AF000EAE6A /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5703555B2D5DE19300A55757 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DB7B3D2D6AB4AF000EAE6A /* FirebaseAnalytics in Frameworks */,
+				57DB7B3F2D6AB4AF000EAE6A /* FirebaseAuth in Frameworks */,
+				57DB7B412D6AB4AF000EAE6A /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +121,9 @@
 			);
 			name = TravelNanban;
 			packageProductDependencies = (
+				57DB7B3C2D6AB4AF000EAE6A /* FirebaseAnalytics */,
+				57DB7B3E2D6AB4AF000EAE6A /* FirebaseAuth */,
+				57DB7B402D6AB4AF000EAE6A /* FirebaseStorage */,
 			);
 			productName = TravelNanban;
 			productReference = 5703554A2D5DE19100A55757 /* TravelNanban.app */;
@@ -195,6 +207,9 @@
 			);
 			mainGroup = 570355412D5DE19100A55757;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5703554B2D5DE19100A55757 /* Products */;
 			projectDirPath = "";
@@ -328,6 +343,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -384,6 +400,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -558,6 +575,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57DB7B3C2D6AB4AF000EAE6A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		57DB7B3E2D6AB4AF000EAE6A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		57DB7B402D6AB4AF000EAE6A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 570355422D5DE19100A55757 /* Project object */;
 }
