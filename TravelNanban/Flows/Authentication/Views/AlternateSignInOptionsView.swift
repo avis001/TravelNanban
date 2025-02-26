@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 struct AlternateSignInOptionsView: View {
     var body: some View {
         VStack {
             HStack(alignment: .center) {
-                Rectangle()
-                    .frame(height: 1)
+                LineView()
                 Text("orSignInUsing")
                     .fixedSize()
-                Rectangle()
-                    .frame(height: 1)
+                LineView()
             }
             
             HStack {
@@ -24,32 +23,26 @@ struct AlternateSignInOptionsView: View {
                     Button(action: {
                         //
                     }, label: {
-                        Text("\(Image(systemName: "apple.logo"))")
-                            .frame(width: 50, height: 50, alignment: .center)
-                            .padding(.horizontal)
+                        ButtonLabel("\(Image(systemName: "apple.logo"))")
                     })
                     
                     Button(action: {
                         //
                     }, label: {
-                        Text("f")
-                            .frame(width: 50, height: 50)
-                            .padding(.horizontal)
+                        ButtonLabel("f")
                     })
                     
                     Button(action: {
                         //
                     }, label: {
-                        Text("G")
-                            .frame(width: 50, height: 50)
-                            .padding(.horizontal)
+                        ButtonLabel("G")
                     })
                 }
                 .font(.title)
                 .fontWeight(.medium)
                 .foregroundStyle(Color.secondary)
                 .background(Color.primary.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .clipShape(RoundedRectangle(cornerRadius: CornerRadius.level1))
             }
         }
     }
@@ -60,4 +53,21 @@ struct AlternateSignInOptionsView: View {
         .padding()
         .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude)
         .background(Color.bg)
+}
+
+// Pragma:- Private Support
+
+private struct ButtonLabel: View {
+    var text: LocalizedStringKey
+    
+    init(_ text: LocalizedStringKey) {
+        self.text = text
+    }
+    
+    var body: some View {
+        Text(text)
+            .frame(width: 50, height: 50, alignment: .center)
+            .padding(.horizontal)
+
+    }
 }

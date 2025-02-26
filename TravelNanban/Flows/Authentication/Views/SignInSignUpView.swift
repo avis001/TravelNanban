@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 struct SignInSignUpView: View {
     @State private var viewModel = AuthenticationViewModel()
@@ -29,7 +30,7 @@ struct SignInSignUpView: View {
             Spacer()
             
             SignInSignUpTabBarView(viewModel: $viewModel)
-                .padding(.top, 36)
+                .padding(.top, Spacing.xl)
         }
         .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .center)
         .background(Color.bg)

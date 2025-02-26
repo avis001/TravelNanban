@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 private enum SelectedField {
     case email, password
@@ -26,7 +27,7 @@ struct SignInFormView: View {
             }
             .padding()
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: CornerRadius.level3)
                     .stroke(Color.secondary.opacity(0.1), lineWidth: 1)
                     .fill(Color.primary.opacity(0.04))
                     .allowsHitTesting(false)
@@ -37,19 +38,19 @@ struct SignInFormView: View {
             } label: {
                 Text("signIn")
                     .padding()
-                    .padding(.horizontal, 36)
+                    .padding(.horizontal, Spacing.xl)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.primary)
             }
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: CornerRadius.level3)
                     .fill(Color.primary.opacity(0.2))
                     .allowsHitTesting(false)
             )
             
             AlternateSignInOptionsView()
-                .padding(.top, 32)
-        }.padding(.horizontal, 24)
+                .padding(.top, Spacing.xl)
+        }.padding(.horizontal, Spacing.large)
     }
 }
 

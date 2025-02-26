@@ -7,5 +7,4 @@
 
 import SwiftUI
 
-extension View {
-    }
+extension View { }

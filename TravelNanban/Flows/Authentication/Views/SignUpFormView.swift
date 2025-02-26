@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 private enum SelectedField {
     case fName, lName, email, password, confirmPassword
@@ -13,14 +14,14 @@ private enum SelectedField {
 
 struct SignUpFormView: View {
     @FocusState private var selectedField: SelectedField?
-    @State private var fNameText: String = ""
-    @State private var lNameText: String = ""
-    @State private var emailText: String = ""
-    @State private var passwordText: String = ""
-    @State private var confirmPasswordText: String = ""
+    @State private var fNameText: String = .empty
+    @State private var lNameText: String = .empty
+    @State private var emailText: String = .empty
+    @State private var passwordText: String = .empty
+    @State private var confirmPasswordText: String = .empty
     
     var body: some View {
-        VStack (alignment: .center, spacing: 16) {
+        VStack (alignment: .center, spacing: Spacing.medium) {
             Group {
                 TextField(" \(Image(systemName: "person.fill")) \(String(localized: "fName"))", text: $fNameText)
                     .focused($selectedField, equals: SelectedField.fName)
@@ -39,7 +40,7 @@ struct SignUpFormView: View {
             }
             .padding()
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: CornerRadius.level3)
                     .stroke(Color.secondary.opacity(0.1), lineWidth: 1)
                     .fill(Color.primary.opacity(0.04))
                     .allowsHitTesting(false)
@@ -50,12 +51,12 @@ struct SignUpFormView: View {
             } label: {
                 Text("signUp")
                     .padding()
-                    .padding(.horizontal, 36)
+                    .padding(.horizontal, Spacing.xl)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.primary)
             }
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: CornerRadius.level3)
                     .fill(Color.secondary.opacity(0.2))
                     .allowsHitTesting(false)
             )
