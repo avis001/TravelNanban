@@ -15,21 +15,21 @@ struct SignInFormView: View {
     @FocusState private var selectedField: SelectedField?
     @State private var emailText: String = ""
     @State private var passwordText: String = ""
-    @State private var textFieldSize: CGSize = .zero
     
     var body: some View {
         VStack (alignment: .center, spacing: 16) {
             Group {
-                TextField("\(Image(systemName: "envelope.fill")) \(String(localized: "email"))", text: $emailText)
+                TextField(" \(Image(systemName: "envelope.fill")) \(String(localized: "email"))", text: $emailText)
                     .focused($selectedField, equals: SelectedField.email)
-                SecureField("\(Image(systemName: "lock.fill")) \(String(localized: "password"))", text: $passwordText)
+                SecureField(" \(Image(systemName: "lock.fill")) \(String(localized: "password"))", text: $passwordText)
                     .focused($selectedField, equals: SelectedField.password)
             }
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.secondary, lineWidth: 1.25)
-                    .shadow(color: .primary.opacity(0.3), radius: 5, x: 0, y: 0)
+                    .stroke(Color.secondary.opacity(0.1), lineWidth: 1)
+                    .fill(Color.white.opacity(0.1))
+                    .allowsHitTesting(false)
             )
                         
             Button {
@@ -43,11 +43,12 @@ struct SignInFormView: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.secondary, lineWidth: 1.25)
-                    .fill(Color.secondary.opacity(0.2))
+                    .fill(Color.white.opacity(0.2))
+                    .allowsHitTesting(false)
             )
             
             AlternateSignInOptionsView()
+                .padding(.top, 32)
         }.padding(.horizontal, 24)
     }
 }

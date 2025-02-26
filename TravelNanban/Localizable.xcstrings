@@ -1,6 +1,30 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : " %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@" : {
+
+    },
+    "confirmPassword" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Password"
+          }
+        }
+      }
+    },
     "email" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -12,11 +36,44 @@
         }
       }
     },
-    "Hello, world!" : {
+    "f" : {
 
     },
-    "Hello, world2!" : {
+    "fName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "First Name"
+          }
+        }
+      }
+    },
+    "G" : {
 
+    },
+    "lName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Name"
+          }
+        }
+      }
+    },
+    "orSignInUsing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or Sign In Using"
+          }
+        }
+      }
     },
     "password" : {
       "extractionState" : "manual",

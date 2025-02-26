@@ -7,67 +7,54 @@
 
 import SwiftUI
 
-private enum SelectedButton {
-    case signIn, signUp
-    
-    func isDisabled(_ button: SelectedButton) -> Bool {
-        if self == button {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-}
-
 struct SignInSignUpTabBarView: View {
-    @State private var selectedButton: SelectedButton = .signIn
+    @Binding var viewModel: AuthenticationViewModel
     
     var body: some View {
         HStack(spacing: .zero) {
             Group {
                 Button(action:  {
-                    selectedButton = .signIn
+                    viewModel.updateAuthPath(.signIn)
                 }, label: {
                     Text("signIn")
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
                         .frame(maxHeight: .greatestFiniteMagnitude, alignment: .center)
                 })
                 .disabled(
-                    selectedButton.isDisabled(.signIn)
+                    viewModel.authPath == .signIn
                 )
                 .background(
-                    selectedButton == .signIn ? Color.clear : Color.secondary.opacity(0.15)
+                    viewModel.authPath == .signIn ? Color.clear : Color.secondary.opacity(0.15)
                 )
                 .scaleEffect(
-                    selectedButton == .signIn ? 1.0 : 1.25
+                    viewModel.authPath == .signIn ? 1.0 : 1.25
                 )
                 .clipShape(
                     UnevenRoundedRectangle(
-                        topTrailingRadius: selectedButton == .signIn ? 0 : 60
+                        topTrailingRadius: viewModel.authPath == .signIn ? 0 : 60
                     )
                 )
                 .ignoresSafeArea()
                 
                 Button(action:  {
-                    selectedButton = .signUp
+                    viewModel.updateAuthPath(.signUp)
                 }, label: {
                     Text("signUp")
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
                         .frame(maxHeight: .greatestFiniteMagnitude, alignment: .center)
                 })
                 .disabled(
-                    selectedButton.isDisabled(.signUp)
+                    viewModel.authPath == .signUp
                 )
                 .background(
-                    selectedButton == .signUp ? Color.clear : Color.secondary.opacity(0.15)
+                    viewModel.authPath == .signUp ? Color.clear : Color.secondary.opacity(0.15)
                 )
                 .scaleEffect(
-                    selectedButton == .signUp ? 1.0 : 1.25
+                    viewModel.authPath == .signUp ? 1.0 : 1.25
                 )
                 .clipShape(
                     UnevenRoundedRectangle(
-                        topLeadingRadius: selectedButton == .signUp ? 0 : 60
+                        topLeadingRadius: viewModel.authPath == .signUp ? 0 : 60
                     )
                 )
                 .ignoresSafeArea()
@@ -80,13 +67,13 @@ struct SignInSignUpTabBarView: View {
             )
             .frame(height: 60)
         }
-        .animation(.interpolatingSpring(duration: 0.1), value: selectedButton)
+        .animation(.interpolatingSpring(duration: 0.1), value: viewModel.authPath)
     }
 }
 
 #Preview {
     VStack {
         Spacer()
-        SignInSignUpTabBarView()
+        SignInSignUpTabBarView(viewModel: .constant(AuthenticationViewModel()))
     }
 }
