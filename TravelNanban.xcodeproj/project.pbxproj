@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57A77A0F2D6F36280077F34C /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 57A77A0E2D6F36280077F34C /* DesignSystem */; };
 		57DB7B3D2D6AB4AF000EAE6A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 57DB7B3C2D6AB4AF000EAE6A /* FirebaseAnalytics */; };
 		57DB7B3F2D6AB4AF000EAE6A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 57DB7B3E2D6AB4AF000EAE6A /* FirebaseAuth */; };
 		57DB7B412D6AB4AF000EAE6A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 57DB7B402D6AB4AF000EAE6A /* FirebaseStorage */; };
@@ -61,6 +62,7 @@
 				57DB7B3D2D6AB4AF000EAE6A /* FirebaseAnalytics in Frameworks */,
 				57DB7B3F2D6AB4AF000EAE6A /* FirebaseAuth in Frameworks */,
 				57DB7B412D6AB4AF000EAE6A /* FirebaseStorage in Frameworks */,
+				57A77A0F2D6F36280077F34C /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +134,7 @@
 				57DB7B3C2D6AB4AF000EAE6A /* FirebaseAnalytics */,
 				57DB7B3E2D6AB4AF000EAE6A /* FirebaseAuth */,
 				57DB7B402D6AB4AF000EAE6A /* FirebaseStorage */,
+				57A77A0E2D6F36280077F34C /* DesignSystem */,
 			);
 			productName = TravelNanban;
 			productReference = 5703554A2D5DE19100A55757 /* TravelNanban.app */;
@@ -217,6 +220,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				57A77A0D2D6F36280077F34C /* XCRemoteSwiftPackageReference "DesignSystem" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5703554B2D5DE19100A55757 /* Products */;
@@ -587,6 +591,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		57A77A0D2D6F36280077F34C /* XCRemoteSwiftPackageReference "DesignSystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/avis001/DesignSystem.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -598,6 +610,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		57A77A0E2D6F36280077F34C /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57A77A0D2D6F36280077F34C /* XCRemoteSwiftPackageReference "DesignSystem" */;
+			productName = DesignSystem;
+		};
 		57DB7B3C2D6AB4AF000EAE6A /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57DB7B3B2D6AB4AF000EAE6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

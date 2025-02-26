@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 struct SignInSignUpTabBarView: View {
     @Binding var viewModel: AuthenticationViewModel
@@ -17,8 +18,7 @@ struct SignInSignUpTabBarView: View {
                     viewModel.updateAuthPath(.signIn)
                 }, label: {
                     Text("signIn")
-                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
-                        .frame(maxHeight: .greatestFiniteMagnitude, alignment: .center)
+                        .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .center)
                 })
                 .disabled(
                     viewModel.authPath == .signIn
@@ -26,22 +26,20 @@ struct SignInSignUpTabBarView: View {
                 .background(
                     viewModel.authPath == .signIn ? Color.clear : Color.secondary.opacity(0.15)
                 )
-                .scaleEffect(
-                    viewModel.authPath == .signIn ? 1.0 : 1.25
-                )
-                .clipShape(
-                    UnevenRoundedRectangle(
-                        topTrailingRadius: viewModel.authPath == .signIn ? 0 : 60
+                .modifier(
+                    AnimatableScaleEffect(
+                        condition: viewModel.authPath == .signIn
                     )
                 )
-                .ignoresSafeArea()
+                .clipShape(
+                    AuthPath.signIn.clipShape
+                )
                 
                 Button(action:  {
                     viewModel.updateAuthPath(.signUp)
                 }, label: {
                     Text("signUp")
-                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
-                        .frame(maxHeight: .greatestFiniteMagnitude, alignment: .center)
+                        .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .center)
                 })
                 .disabled(
                     viewModel.authPath == .signUp
@@ -49,22 +47,20 @@ struct SignInSignUpTabBarView: View {
                 .background(
                     viewModel.authPath == .signUp ? Color.clear : Color.secondary.opacity(0.15)
                 )
-                .scaleEffect(
-                    viewModel.authPath == .signUp ? 1.0 : 1.25
-                )
-                .clipShape(
-                    UnevenRoundedRectangle(
-                        topLeadingRadius: viewModel.authPath == .signUp ? 0 : 60
+                .modifier(
+                    AnimatableScaleEffect(
+                        condition: viewModel.authPath == .signUp
                     )
                 )
-                .ignoresSafeArea()
+                .clipShape(
+                    AuthPath.signUp.clipShape
+                )
             }
             .font(.title)
             .fontWeight(.medium)
-            .padding(.top, 16)
-            .foregroundStyle(
-                Color.primaryText
-            )
+            .padding(.top, Spacing.medium)
+            .foregroundStyle(Color.primaryText)
+            .ignoresSafeArea()
             .frame(height: 60)
         }
         .animation(.interpolatingSpring(duration: 0.1), value: viewModel.authPath)
@@ -75,5 +71,5 @@ struct SignInSignUpTabBarView: View {
     VStack {
         Spacer()
         SignInSignUpTabBarView(viewModel: .constant(AuthenticationViewModel()))
-    }
+    }.background(Color.bg)
 }

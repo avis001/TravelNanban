@@ -47,8 +47,8 @@ struct AlternateSignInOptionsView: View {
                 }
                 .font(.title)
                 .fontWeight(.medium)
-                .foregroundStyle(Color.white)
-                .background(Color.white.opacity(0.2))
+                .foregroundStyle(Color.secondary)
+                .background(Color.primary.opacity(0.2))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             }
         }

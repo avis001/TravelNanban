@@ -28,7 +28,7 @@ struct SignInFormView: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.secondary.opacity(0.1), lineWidth: 1)
-                    .fill(Color.white.opacity(0.1))
+                    .fill(Color.primary.opacity(0.04))
                     .allowsHitTesting(false)
             )
                         
@@ -43,7 +43,7 @@ struct SignInFormView: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.white.opacity(0.2))
+                    .fill(Color.primary.opacity(0.2))
                     .allowsHitTesting(false)
             )
             
